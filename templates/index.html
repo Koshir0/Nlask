@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ISS Space</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="icon" href="https://img.icons8.com/color/48/000000/astronaut-helmet.png">
+
+	<style >
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			margin: 0;
+			background-image: url(static/nasa.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			font-family: 'Space Mono', monospace;
+			text-align: center;
+			animation: fadein 2s;
+		}
+		#head{
+			font-size: 3em;
+		}
+		mark{
+			background-color: white;
+			color: black;
+			opacity: .7;
+			transition: .5s ease opacity;
+			font-weight: bold;
+		}
+		li{
+			
+			list-style-type: none;
+			animation: fadein 2s;
+		
+		}
+		mark:hover{
+			opacity: 1;
+		}
+		
+		@keyframes fadein {
+		  from { opacity: 0}
+		  to   { opacity: 1}
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		
+		<div id="con">
+			<h1 id="head"><mark>{{human_in_space}}</mark></h1>
+			{% for astros in astros_in_space%}
+				<h3><li><img src="https://img.icons8.com/color/48/000000/nasa.png"/>{{astros}}</li></h3>
+			{% endfor %}
+
+		<p><mark>The iss in {{longitude}} longitude, {{latitude}} latitude</mark></p>
+		</div>
+		
+	</div>
+	
+
+</body>
+</html>
